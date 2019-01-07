@@ -1,0 +1,358 @@
+Bootstrap4 网格系统：
+.container					：容器，固定宽度
+.container-fluid			：容器，全局宽度
+.row						：定义行
+.col						：创建相等宽度的列，自动布局
+.col-sm-4					：平板，创建响应式列
+.col-md-4					：桌面，创建响应式列
+.col-lg-4					：大桌面，创建响应式列
+.col-xl-4					：超大桌面，创建响应式列
+.offset-md-3				：偏移列，右移3格(md)
+
+Bootstrap4 文字排版：
+<h1></h1>-<h6></h6>			：定义了h1-h6的样式
+.display-1					：标题类，控制标题样式
+.display-2					：标题类，控制标题样式
+.display-3					：标题类，控制标题样式
+.display-4					：标题类，控制标题样式
+<small></small>				：字色更小，颜色更浅
+<mark></mark>				：黄色背景，有一定内边距
+<abbr></abbr>				：文本下面带一条虚线
+.initialism					：用在abbr元素中，使元素中的文本字号小一点，且均转为大写
+<blockquote></blockquote>	：引用
+.blockquote					：在blockquote标签中添加
+.blockquote-footer			：引用脚本
+<dl></dl>					：dt,dd添加相应样式
+<code></code>				：代码样式
+<kbd></kbd>					：按键样式
+<pre></pre>					：原样输出
+.pre-scrollable				：使 pre 元素可滚动，代码块区域最大高度为340px,一旦超出这个高度,就会在Y轴出现滚动条
+.font-weight-bold			：加粗文本
+.font-weight-normal			：正常的文本
+.font-weight-light			：更细的文本
+.font-italic				：斜体
+.lead						：使段落更突出
+.small						：指定更小文本
+.text-left					：文本左对齐
+.text-center				：文本居中
+.text-right					：文本右对齐
+.text-justify				：设定文本对齐,段落中超出屏幕部分文字自动换行
+.text-nowrap				：段落中超出屏幕部分不换行
+.text-lowercase				：设定文本小写
+.text-uppercase				：设定文本大写
+.text-capitalize			：设定单词首字母大写
+.list-unstyled				：移除默认的列表样式，ul , ol
+.list-inline				：将所有列表项放在同一行，.list-inline-item
+
+Bootstrap4 颜色：
+.text-muted 				：柔和文本 //也可以在链接中使用
+.text-primary 				：重要文本
+.text-success 				：成功文本
+.text-info 					：提示信息文本
+.text-warning				：警告文本
+.text-danger 				：危险文本
+.text-secondary				：副标题
+.text-white					：白色文本（白色背景上看不清楚）
+.text-dark					：深灰色文本
+.text-light					：浅灰色文本（白色背景上看不清楚）
+.bg-primary					：重要的背景颜色  //背景颜色不会设置文本颜色，可以自行添加
+.bg-success 				：执行成功的背景颜色
+.bg-info 					：提示信息背景颜色
+.bg-warning 				：警告背景颜色
+.bg-danger 					：危险背景颜色
+.bg-secondary 				：副标题背景颜色
+.bg-dark					：深灰背景颜色
+.bg-light					；浅灰背景颜色
+
+Bootstrap4 表格：
+.table						：基础表格样式
+.table-striped				：条纹表格
+.table-bordered				：带边框表格
+.table-hover				：鼠标悬停状态表格(灰色背景)
+.table-dark					：为表格添加黑色背景
+.table-primary				：蓝色: 指定这是一个重要的操作   //可以为表格的行或者单元格设置颜色
+.table-success				：绿色: 指定这是一个允许执行的操作
+.table-danger				：红色: 指定这是可以危险的操作
+.table-info					：浅蓝色: 表示内容已变更
+.table-warning				：橘色: 表示需要注意的操作
+.table-active				：灰色: 用于鼠标悬停效果
+.table-secondary			：灰色: 表示内容不怎么重要
+.table-light				：浅灰色，可以是表格行的背景
+.table-dark					：深灰色，可以是表格行的背景
+.thead-dark					：给表头添加黑色背景
+.thead-light				：给表头添加灰色背景
+.table-sm					：设置较小的表格
+.table-responsive-sm		：小于 576px  //响应式表格，会显示滚动条
+.table-responsive-md		：小于 768px
+.table-responsive-lg		：小于 992px
+.table-responsive-xl		：小于 1200px
+
+Bootstrap4 图像形状 ：
+.rounded					：圆角效果
+.rounded-circle				：椭圆形图片
+.img-thumbnail				：图片外层有边框（缩略图）
+.float-right				：图片右对齐
+.float-left					：图片左对齐
+.img-fluid					：响应式
+
+Bootstrap4 Jumbotron ：
+.jumbotron					：创建一个超大屏幕
+.jumbotron-fluid			：全屏幕，在包含的div里添加.container/.container-fluid
+
+Bootstrap4信息提示框 ：
+.alert						：创建信息提示
+.alert-success				：成功提示
+.alert-info					：信息提示
+.alert-warning				：警告提示
+.alert-danger				：危险提示
+.alert-primary				：原始提示
+.alert-secondary			：副标题提示
+.alert-light				：浅灰提示
+.alert-dark					：深灰提示
+.alert-link					：提示信息显示在链接上，<a></a>
+.alert-dismissible			：提示信息可关闭
+.close 						：关闭类,<button></button>
+.fade .show					：设置提示框在关闭时的淡出和淡入效果
+
+Bootstrap4 按钮 ：按钮类可用于 <a>, <button>, 或 <input> 元素上
+.btn						：创建一个按钮
+.btn-primary				：主要
+.btn-secondary				：次要
+.btn-success				：成功
+.btn-info					：信息
+.btn-warning				：警告
+.btn-danger					：危险
+.btn-dark					：黑色
+.btn-light					：浅色
+.btn-link					：链接按钮
+.btn-outline-primary		：主要按钮 //按钮边框
+.btn-outline-secondary		：次要按钮
+.btn-outline-success		：成功按钮
+.btn-outline-info			：信息按钮
+.btn-outline-warning		：警告按钮
+.btn-outline-danger			：危险按钮
+.btn-outline-dark			：黑色按钮
+.btn-outline-light			：浅色按钮
+.btn-lg						：大号按钮
+.btn-sm						：小号按钮
+.btn-block					：块级按钮，宽度为100%
+.active						：按钮被点击状态
+.disabled					：禁用状态
+
+Bootstrap4 按钮组：
+.btn-group					：创建按钮组
+.btn-group-lg|sm			：设置按钮组的大小
+.btn-group-vertical			：创建垂直的按钮组
+
+Bootstrap4 下拉菜单：
+.dropdown					：创建一个下拉菜单,div
+.dropdown-toggle			：下拉菜单，在按钮组中创建下拉菜单，<button></button>
+.dropdown-menu				：下拉列表
+.dropdown-item				：下拉列表项
+.dropdown-divider			：在下拉菜单中创建一个水平的分割线，div
+.dropdown-header			：在下拉菜单中添加标题，h5
+.active						：让下拉菜单的选项高亮显示 (添加蓝色背景)
+.disabled					：禁用下拉菜单的选项
+.dropdown-menu-right		：下拉菜单右对齐
+.dropup						：下拉菜单向上弹出，div
+.caret						：三角符号，在下拉按钮中，button，span
+.dropdown-toggle-split		：拆分按钮下拉菜单，在按钮组中创建下拉菜单,caret
+
+Bootstrap4 徽章（Badges）：
+.badge						：创建一个徽章，在span中添加该类，添加文本
+.badge-primary				：主要  //各种颜色类型的徽章
+.badge-secondary			：次要
+.badge-success				：成功
+.badge-danger				：危险
+.badge-warning				：警告
+.badge-info					：信息
+.badge-light				：浅色
+.badge-dark					：深色
+.badge-pill					：设置为药丸形状的徽章
+
+Bootstrap4 进度条：
+.progress					：创建一个进度条
+.progress-bar				：进度条的一部分
+.progress-bar-striped		：带有条纹的进度条
+.progress-bar-animated		：为进度条添加动画，需要结合.progress-bar-striped一起使用
+
+Bootstrap4 分页：
+.pagination					：创建一个分页
+.page-item					：各个分页项
+.page-link					：各个分页项中的链接
+.active						：当前页，高亮显示
+.disabled					：不可点击的分页
+.pagination-lg|sm			：分页的显示大小
+
+Bootstrap4 列表组：ul li , a
+.list-group					：创建一个列表组
+.list-group-item			：各个列表项
+.active						：激活状态
+.disabled					：禁用状态
+.list-group-item-action		：鼠标悬停显示灰色背景
+.list-group-item-success	：成功列表项
+.list-group-item-secondary	：次要列表项
+.list-group-item-info		：信息列表项
+.list-group-item-warning	：警告列表项
+.list-group-item-danger		：危险列表项
+.list-group-item-primary	：主要列表项
+.list-group-item-dark 		：深灰色列表项
+.list-group-item-light		：浅色列表项
+
+Bootstrap4 卡片：
+.card						：创建一个卡片
+.card-body					：卡片内容，包含标题和正文内容，可选
+.card-header				：卡片的头部样式
+.card-footer				：卡片的底部样式
+.card-title					：卡片标题
+.card-text					：卡片正文内容
+.card-link					：给卡片中的链接设置颜色
+.card-img-top				：设置图片在文字上方，img
+.card-img-bottom			：设置图片在文字下方，img
+.card-img-overlay			：将图片设置为背景，img
+
+Bootstrap4 折叠：
+.collapse					：创建一个折叠元素
+.show						：默认情况下折叠的内容是隐藏的，可以添加该类让内容显示
+
+Bootstrap4 导航：
+.nav						：创建一个导航
+.nav-item					：导航中各项
+.nav-link					：导航中各项上的链接
+.justify-content-center		：导航居中显示  //默认是左对齐
+.justify-content-end		：导航右对齐
+.flex-column				：创建垂直导航
+.nav-tabs					：将导航转化为选项卡
+.nav-pills					：将导航项设置成胶囊形状
+.nav-justified				：设置导航项齐行等宽显示
+.active						：选中状态
+.disabled					：禁用状态
+.tab-content				：动态选项卡，导航中各项对应的内容整体
+.tab-pane					：.tab-content中的各项，导航中各项对应的内容
+
+Bootstrap4 导航栏：
+.navbar						：创建一个导航栏，nav
+.navbar-expand-sm|md|lg|xl	：用于响应式
+.navbar-nav					：创建导航列表，ul
+.navbar-brand				：用于高亮显示，a
+.navbar-toggler				：折叠导航栏，三杠，button
+.navbar-toggler-icon		：三杠，button，span
+.navbar-collapse			：折叠导航栏中的列表，div
+.navbar-text				：设置导航栏上非链接文本，span
+.fixed-top					：固定在头部
+.fixed-bottom				：设置导航栏固定在底部
+
+Bootstrap4 面包屑导航（Breadcrumb）：
+.breadcrumb					：创建一个面包屑导航
+.breadcrumb-item			：面包屑导航中的各项
+
+Bootstrap4 表单：表单控件：input,textarea,checkbox,radio,select
+.form-group					：创建一个表单，div
+.form-control				：input，textarea,select中添加
+.form-check					：创建一个复选框，div
+.form-check-label			：复选框中的label
+.form-check-input			：复选框中的input
+.radio						：创建一个单选框，div
+.form-inline				：内联表单，form
+
+Bootstrap4 输入框组：
+.input-group				：创建一个输入框组，div
+.input-group-prepend		：在输入框的的前面添加文本信息，div
+.input-group-append			：添加在输入框的后面,div
+.input-group-text			：设置文本的样式,div span
+.input-group-sm|lg			：输入框大小
+
+Bootstrap4 轮播：
+.carousel					：创建一个轮播图
+.slide						：切换图片的过渡和动画效果
+.carousel-indicators		：为轮播添加一个指示符，就是轮播图底下的一个个小点，轮播的过程可以显示目前是第几张图
+.carousel-inner				：添加要切换的图片
+.carousel-item				：指定每个图片的内容
+.curousel-caption			：设置轮播图片的描述文本，在.carousel-item中添加
+.carousel-control-prev		：添加左侧的按钮，点击会返回上一张
+.carousel-control-prev-icon	：与 .carousel-control-prev 一起使用，设置左侧的按钮
+.carousel-control-next		：添加右侧按钮，点击会切换到下一张
+.carousel-control-next-icon	：与 .carousel-control-next 一起使用，设置右侧的按钮
+
+Bootstrap4 模态框：
+.modal						：创建一个模态框，div
+.modal-dialog				：.modal下面包含一个div
+.modal-content				：.modal-dialog包含一个div，content，包含头部，内容，底部
+.modal-header				：模态框头部，header，包含title
+.modal-title				：头部中的标题
+.modal-body					：模态框内容
+.modal-footer				：模态框底部
+.fade						：模态框淡入淡出
+.modal-sm|lg				：模态框尺寸
+
+Bootstrap4 提示框：提示框是一个小小的弹窗，在鼠标移动到元素上显示，鼠标移到元素外就消失
+data-toggle="tooltip"		：创建一个提示框
+data-placement				：设定弹出框显示的方向
+title						：提示框的内容
+
+Bootstrap4 弹出框：弹出框控件类似于提示框，它在鼠标点击到元素后显示，与提示框不同的是它可以显示更多的内容
+data-toggle="popover"		：创建一个弹出框
+title						：弹出框的标题
+data-content				：弹出框的文本内容
+data-placement				：设定弹出框显示的方向
+data-trigger="focus/hover"	：设置在鼠标点击元素外部区域来关闭弹出框/实现在鼠标移动到元素上显示，移除后消失的效果
+
+Bootstrap 滚动监听(Scrollspy)：
+data-spy="scroll"			：创建一个滚动监听
+data-target=".navbar"		：可以联系上可滚动区域，nav
+data-offset="50"			：用于计算滚动位置时，距离顶部的偏移像素
+
+Bootstrap4 小工具：
+.border						：添加/移除边框
+.border-0
+.border-top-0
+.border-right-0
+.border-bottom-0
+.border-left-0
+.border-primary				：边框颜色，需要先在前面加上.border
+.border-secondary
+.border-success
+.border-danger
+.border-info
+.border-warning
+.border-light
+.border-dark
+.border-white
+.rounded					：添加圆角边框
+.rounded-top
+.rounded-right
+.rounded-bottom
+.rounded-left
+.rounded-circle
+.rounded-0
+.float-right				：元素向右浮动
+.float-left					：元素向左浮动
+.clearfix					：清除浮动
+.mx-auto					：元素居中对齐
+.w-*						：设置宽度
+.mw-100						：设置最大宽度100%
+.h-*						：设置高度
+.mh-100						：设置最大高度100%
+
+Bootstrap 4 多媒体对象：
+.media						：创建一个多媒体对象
+.media-body					：多媒体对象中的内容
+.align-self-start|center|end：设置多媒体对象的图片显示位置
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

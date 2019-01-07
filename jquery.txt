@@ -1,0 +1,296 @@
+jQuery 是一个 JavaScript 函数库。
+jquery就是把最常用的代码打包成库, jquery自己就是js写的
+但是jQuery语法与JavaScript语法存在差异，不可以混用。
+
+jQuery：
+事件，效果，HTML，遍历。
+
+jQuery 库包含以下特性：
+
+<script src="../jquery-3.3.1.min.js"></script> 标签应该位于页面的 <head> 部分。
+其实放在body部分中也是没有什么问题的。
+
+jQuery选择器：
+$(this)					：当前 HTML 元素
+$("p")					：所有 <p> 元素
+$("p.intro")			：所有 class="intro" 的 <p> 元素
+$(".intro")				：所有 class="intro" 的元素
+$("#intro")				：id="intro" 的元素
+$("ul li：first")		：每个 <ul> 的第一个 <li> 元素
+$("[href$='.jpg']")		：所有带有以 ".jpg" 结尾的属性值的 href 属性
+$("div#intro .head")	：id="intro" 的 <div> 元素中的所有 class="head" 的元素
+
+jQuery事件：document.getElementById("app").onclick = function(){};//js
+$(document).ready(function)		：就绪事件（当文档完成加载时）
+$(selector).click(function)		：点击事件
+$(selector).dblclick(function)	：触双击事件
+$(selector).focus(function)		：获得焦点事件
+$(selector).mouseover(function)	：鼠标悬停事件
+$(selector).mouseout(function)	：鼠标移开事件
+
+显示/隐藏元素：document.getElementById("app").style.disabled = "true"; //js
+$(selector).hide(speed,callback);
+$(selector).show(speed,callback);
+$(selector).toggle(speed,callback);切换显示/隐藏的操作
+可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
+可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
+
+淡入淡出：
+fadeIn();    	：淡入元素
+fadeOut();   	：淡出元素
+fadeToggle();	：切换淡入/淡出操作
+fadeTo();    	：允许渐变为给定的不透明度（值介于 0 与 1 之间）
+$(selector).fadeIn(speed,callback);
+$(selector).fadeOut(speed,callback);
+$(selector).fadeToggle(speed,callback);
+$(selector).fadeTo(speed,opacity,callback);
+fadeTo() 方法中：
+必需的 speed 参数规定效果的时长。它可以取以下值："slow"、"fast" 或毫秒。
+必需的 opacity 参数将淡入淡出效果设置为给定的不透明度（值介于 0 与 1 之间）。
+可选的 callback 参数是该函数完成后所执行的函数名称。
+{
+	$("button").click(function(){
+	  $("#div1").fadeOut();
+	  $("#div2").fadeOut("slow");
+	  $("#div3").fadeOut(3000);
+});
+}
+
+滑动：
+slideDown();   	：向下滑动
+slideUp();     	：向上滑动
+slideToggle(); 	：切换
+$(selector).slideUp(speed,callback);
+
+动画 ：
+$(selector).animate({params},speed,callback);
+params是必须的，需要使用动画改变元素的哪些属性，剩下两个是可选的。
+{
+	$("button").click(function(){
+	  $("div").animate({
+		width：'250px'/toggle, //预定义的值(toggle)，会消失。
+		opacity：'0.5',
+		height：'150px',
+		width：'150px'
+  },"slow");
+}); 
+}
+可以使用动画队列来操作，是有先后顺序的。
+{
+	$("button").click(function(){
+		var div=$("div"); //获取到div元素
+		div.animate({height：'300px',opacity：'0.4'},"slow");
+		div.animate({width：'300px',opacity：'0.8'},"slow");
+		div.animate({height：'100px',opacity：'0.4'},"slow");
+		div.animate({width：'100px',opacity：'0.8'},"slow");
+});
+}
+如需对位置进行操作，要记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute！
+可以用 animate() 方法来操作所有 CSS 属性吗？
+是的，几乎可以！不过，需要记住一件重要的事情：
+当使用 animate() 时，必须使用 Camel 标记法书写所有的属性名，
+比如，必须使用 paddingLeft 而不是 padding-left，使用 marginRight 而不是 margin-right，等等。
+
+jQuery stop() ：用于停止动画或效果，在它们完成之前。
+stop() 方法适用于所有 jQuery 效果函数，包括滑动、淡入淡出和自定义动画。
+$(selector).stop(stopAll,goToEnd);
+stopAll，goToEnd均为可选，默认值均为false。
+stop()         		： 停止被选元素上指定的当前动画，动画队列中剩余的正常执行。
+stop(true)	   		： 停止所有动画。
+stop(true,true)		： 会立即完成当前活动的动画，然后停下来。
+
+jQuery Callback 函数：在当前动画 100% 完成之后执行。
+$(selector).hide(speed,callback)
+如果您希望在一个涉及动画的函数之后来执行语句，请使用 callback 函数。
+{
+	$("p").hide(1000,function(){
+		alert("The paragraph is now hidden");
+		});
+}
+
+jQuery - Chaining：允许我们在一条语句中允许多个 jQuery 方法（在相同的元素上）。
+$("#p1").css("color","red").slideUp(2000).slideDown(2000);
+"p1" 元素首先会变为红色，然后向上滑动，然后向下滑动
+这样的话，浏览器就不必多次查找相同的元素。
+
+获得/设置内容和属性：innerHTML,value; //js
+text();				：文本内容
+html();				：内容（带html标记）
+val(); 				：表单字段的值
+attr();				：属性的值
+$("#test1").text("Hello world!");
+$("#test2").html("<b>Hello world!</b>");
+$("#w3s").attr("href","http：//www.w3school.com.cn/jquery")
+
+添加元素：
+prepend();			：在开头插入内容
+append(); 			：在结尾插入内容  appendChild(); //js 
+after();  			：在(元素)之后插入内容
+before(); 			：在(元素)之前插入内容
+$("ol").append("<li>Appended item</li>");
+{
+	var txt1="<p>Text.</p>";              // 以 HTML 创建新元素
+	var txt2=$("<p></p>").text("Text.");  // 以 jQuery 创建新元素
+	var txt3=document.createElement("p");
+	txt3.innerHTML="Text.";               // 通过 DOM 来创建文本
+	$("body").append(txt1,txt2,txt3);        // 追加新元素
+}
+{
+	var txt1="<b>I </b>";                    // 以 HTML 创建元素
+	var txt2=$("<i></i>").text("love ");     // 通过 jQuery 创建元素
+	var txt3=document.createElement("big");  // 通过 DOM 创建元素
+	txt3.innerHTML="jQuery!";
+	$("img").after(txt1,txt2,txt3);          // 在 img 之后插入新元素
+}
+
+删除元素：
+remove();                	：删除被选元素，包括其子元素
+empty();                 	：删除被选元素中的所有子元素
+$("p").remove(".italic") 	：对被删元素进行过滤(删除p元素中类名为italic的元素)
+$("div").remove();       	：删除div元素，且其中的子元素均被删除
+$("div").empty();        	：删除div元素中的所有子元素，但div元素仍保留
+
+获取并设置CSS类：arr[0].className = "active";
+addClass();    				：给被选元素添加一个/多个类
+removeClass(); 				：给被选元素删除一个/多个类
+toggleClass(); 				：切换添加/删除类的操作
+css();         				：设置/返回被选元素的一个/多个样式属性 document.getElementById("app").style.color = "red"; //js
+$("#div1").addClass("important blue");
+$("p").css("background-color");
+$("p").css("background-color","yellow");
+$("p").css({"background-color"："yellow","font-size"："200%"});
+
+尺寸：
+width()           			：设置或返回元素的宽度（不包括内边距、边框或外边距）
+height()
+innerWidth()     			：返回元素的宽度（包括内边距）
+innerHeight()
+outerWidth()      			：返回元素的宽度（包括内边距和边框）
+outerHeight()
+outerWidth(true)  			：返回元素的宽度（包括内边距、边框和外边距）
+outerHeight(true) 
+$("#div1").width(320).height(320);
+
+遍历：
+JavaScript遍历需要使用for循环，而jQuery遍历可以使用如下方法。
+祖先：父、祖父或曾祖父等等
+parent();        			：直接父元素
+parents();       			：所有父元素（可以筛选）·
+parentsUntil();  			：两个元素之间的所有父元素
+{
+	$("span").parent();
+	$("span").parents();
+	$("span").parents("ul");
+	$("span").parentsUntil("div");
+}
+
+后代：子、孙、曾孙等等
+children();					：直接所有子元素（可以筛选直接子元素中的其中一个）
+find();    					：所有子元素（可以筛选）
+{
+	$("div").children();
+	$("div").children("p.1"); 返回div元素的直接子元素中类名为 "1" 的所有 <p> 元素
+	$("div").find("span");    返回div元素的后代元素中的所有span
+	$("div").find("*");       返回div的所有后代元素
+	$("div").find();          不能这样使用，无效果
+}
+
+同胞：拥有相同的父元素
+siblings();   				：所有同胞元素（可筛选）
+next();       				：下一个同胞元素
+nextAll();    				：下面的所有同胞元素
+nextUntil();  				：下面两个元素之间的同胞
+prev();       
+prevAll();
+prevUntil();
+{
+	$("h2").siblings();
+	$("h2").siblings("p");
+	$("h2").next();
+	$("h2").nextAll();
+	$("h2").nextUntil("h6");
+}
+
+过滤：
+first();   			：返回被选元素的首个元素
+last();    			：返回被选元素的最后一个元素
+eq();      			：返回被选元素中带有指定索引号的元素
+filter();  			：不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回
+not();     			：not() 方法返回不匹配标准的所有元素。与 filter() 相反
+{
+	$("div p").first();
+	$("div p").last();
+	$("p").eq(1);     需先获取索引号index（1），才可以进行对p元素的指定索引号的选取。
+	$("p").filter(".intro");
+	$("p").not(".intro");
+}
+
+jQuery - AJAX load() 方法：从服务器加载数据，并把返回的数据放入被选元素中
+$(selector).load(URL,data,callback);
+必需的 URL 参数规定/您希望加载的 URL。
+可选的 data 参数规定/与请求一同发送的查询字符串键/值对集合。
+可选的 callback 参数是 / load() 方法完成后所执行的函数名称。
+$("#div1").load("demo_test.txt #p1");
+
+jQuery - AJAX get() 和 post() 方法
+get() 		 ：从服务器上请求数据
+post()		 ：向服务器上发送数据
+$.get(URL,callback);
+必需的 URL 参数规定您希望请求的 URL。
+可选的 callback 参数是请求成功后所执行的函数名。
+$.post(URL,data,callback);
+必需的 URL 参数规定您希望请求的 URL。
+可选的 data 参数规定连同请求发送的数据。
+可选的 callback 参数是请求成功后所执行的函数名。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

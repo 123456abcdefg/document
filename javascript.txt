@@ -1,0 +1,454 @@
+JavaScript的实现包括以下3个部分：
+	ECMAScript(核心)		：描述了JS的语法和基本对象。
+	文档对象模型 （DOM）	：处理网页内容的方法和接口
+	浏览器对象模型（BOM）	：与浏览器交互的方法和接口
+	
+DOM 是为了操作文档出现的 API，document 是其的一个对象；
+BOM 是为了操作浏览器出现的 API，window 是其的一个对象。
+BOM是浏览器对象模型，DOM是文档对象模型，前者是对浏览器本身进行操作，而后者是对浏览器（可看成容器）内的内容进行操作
+
+HTML 中的脚本必须位于 <script> 与 </script> 标签之间。
+脚本可被放置在 HTML 页面的 <body> 和 <head> 部分中。
+如需使用外部文件，请在 <script> </script>标签的 "src" 属性中设置该 .js 文件
+在 <head> 或 <body> 中引用脚本文件都是可以的。实际运行效果与您在 <script> </script>标签中编写脚本完全一致。
+
+DOM：
+改变 HTML 内容：
+document.getElementById(id).innerHTML=new HTML
+
+改变 HTML 属性
+document.getElementById(id).attribute=new value
+ 
+改变 HTML 样式
+document.getElementById(id).style.property=new style
+JS    ：abc.className="test";
+JQuery：abc.removeClass(); abc.addClass("test");
+
+对事件做出反应
+onclick=JavaScript
+
+事件：(当用户点击鼠标时;当网页已加载时;当图像已加载时;当鼠标移动到元素上时
+当输入字段被改变时;当提交 HTML 表单时;当用户触发按键时)
+
+HTML 事件属性
+<button onclick="displayDate()">点击这里</button>
+
+使用 HTML DOM 来分配事件
+<script>
+document.getElementById("myBtn").onclick=function(){displayDate()};
+</script>
+
+onload 和 onunload 事件		：会在用户进入或离开页面时被触发。
+onchange 事件				：常结合对输入字段的验证来使用。（select,option下拉框）
+onmouseover 和 onmouseout 	：可用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数。
+onmousedown、onmouseup 以及 onclick 事件：构成了鼠标点击事件的所有部分。
+首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件。
+onfocus 事件：获得焦点时，被触发。
+
+appendChild()				：创建新的 HTML 元素
+removeChild()				：删除已有的 HTML 元素
+
+{
+	var para=document.createElement("p");
+	var node=document.createTextNode("这是新段落。");
+	para.appendChild(node);
+	var element=document.getElementById("div1");//找到对应的父元素
+	element.appendChild(para);
+}
+
+{
+	var parent=document.getElementById("div1");
+	var child=document.getElementById("p1");
+	parent.removeChild(child);
+}
+{
+	var child=document.getElementById("p1");
+	child.parentNode.removeChild(child);//使用其 parentNode 属性来找到父元素
+}
+
+var x;
+当您向变量分配文本值时，应该用双引号或单引号包围这个值。
+当您向变量赋的值是数值时，不要使用引号。如果您用引号包围数值，该值会被作为文本来处理。
+
+javascript数据类型：（JavaScript 变量均为对象。当您声明一个变量时，就创建了一个新的对象。）
+字符串、数字、布尔、数组、对象、Null、Undefined
+
+字符串：
+字符串是存储字符（比如 "Bill Gates"）的变量。
+可以使用单引号或双引号
+
+布尔：
+布尔（逻辑）只能有两个值：true 或 false。
+
+数组：
+var myArray=new Array()
+定义数组中的数值：
+{
+	var mycars=new Array()
+	mycars[0]="Saab"
+	mycars[1]="Volvo"
+	mycars[2]="BMW"
+
+	var mycars=new Array(3)
+	mycars[0]="Saab"
+	mycars[1]="Volvo"
+	mycars[2]="BMW"
+
+	var mycars=new Array("Saab","Volvo","BMW")
+	
+	var cars=["Audi","BMW","Volvo"];
+}
+	
+对象（对象只是带有属性和方法的特殊数据类型）：
+{
+	var person={
+		firstname ： "Bill",
+		lastname  ： "Gates",
+		id        ：  5566
+	}
+	寻址方式：
+		name=person.lastname;
+		name=person["lastname"];
+}
+
+for/in循环：
+for(x in shops){
+	alert(shops[x]);
+}
+x表示的是对象shops中的属性
+
+
+JS对象（JavaScript 提供多个内建对象，比如 String、Date、Array 等等）：
+
+Number对象：
+属性：
+	MAX VALUE
+	MIN VALUE
+	NEGATIVE INFINITIVE
+	POSITIVE INFINITIVE
+	NaN
+	prototype
+	constructor
+方法：
+	toExponential()
+	toFixed()
+	toPrecision()
+	toString()
+	valueOf()
+	isNaN();是否为非数not a number
+
+String对象：
+属性：
+	length
+	typeOf;运算符
+	{
+		var oTemp;
+		alert(typeof oTemp);//number,string,boolean,undefined,object(引用类型/Null)
+	}
+	instanceof;运算符(在 typeof 方法返回 "object" 的情况下，instanceof 方法还是很有用的)
+	{
+		var oStringObject = new String("hello world");
+		alert(oStringObject instanceof String);	//输出 "true"
+	}
+方法：
+	indexOf()：定位字符串中某一个指定的字符首次出现的位置
+	lastIndexOf();
+	charAt();返回指定位置的字符
+	charCodeAt();返回指定位置的字符的相应字符代码
+	match()：使用 match() 来查找字符串中特定的字符，并且如果找到的话，则返回这个字符。若在if语句中，若是找到则为真。
+	replace()：{
+		var str="Visit Microsoft!"
+		document.write(str.replace(/Microsoft/,"W3School"))
+	}
+	localeCompare();
+	{
+		如果 String 对象按照字母顺序排在参数中的字符串之前，返回负数。(-1)
+		如果 String 对象等于参数中的字符串，返回 0
+		如果 String 对象按照字母顺序排在参数中的字符串之后，返回正数。(1)
+	}
+
+Date对象：	
+定义日期：
+var myDate=new Date() 
+{
+	var today=new Date();
+	var h=today.getHours();
+	var m=today.getMinutes();
+	var s=today.getSeconds();
+}
+
+Array对象：
+方法：
+	concat();    合并两个数组
+	join();		 将数组的所有元素组成一个字符串(默认是以,连接，可以自己定义)
+	sort();		 对数组进行排序(可以依照字母顺序或是数值顺序)
+
+Boolean对象：
+var myBoolean=new Boolean()
+
+Math（算术）对象：
+方法：
+	Math.round(4.7);                对一个数进行四舍五入
+	Math.random();                  返回一个介于 0 和 1 之间的随机数
+	Math.floor(Math.random()*11);   返回一个介于 0 和 10 之间的随机数(向下取舍)
+Math 对象并不像 Date 和 String 那样是对象的类，因此没有构造函数 Math()，
+像 Math.sin() 这样的函数只是函数，不是某个对象的方法。
+您无需创建它，通过把 Math 作为对象使用就可以调用其所有属性和方法。
+
+RegExp(正则)对象：
+当您检索某个文本时，可以使用一种模式来描述要检索的内容。RegExp 就是这种模式
+定义对象：
+	var patt1=new RegExp("e");
+当您使用该 RegExp 对象在一个字符串中检索时，将寻找的是字符 "e"。
+方法：
+	test("e");    		返回值为true/false
+	exec("e");    		返回值是被找到的值。如果没有发现匹配，则返回 null
+	exec("e","g") 		返回值为所有的被找到的值，直至为null，输出，(g不改变,global)
+	compile("e","d");   同时搜索，truefalse,字符串中存在 "e"，而没有 "d"
+	
+	
+javascript计时：
+setTimeout();		：仅执行一次
+clearTimeout();
+setInterval();		：每隔一段时间就会执行一次
+clearInterval();
+var t=setTimeout("javascript语句",毫秒)
+//"js语句"可以是alert('5 seconds!')或是一个函数的调用 alertMsg()
+clearTimeout(setTimeout_variable)
+//setTimeout_variable的值即为t
+{
+	function timedCount(){
+		document.getElementById('txt').value=c;
+		c=c+1;
+		t=setTimeout("timedCount()",1000);
+	}
+	function stopCount(){
+		clearTimeout(t);
+	}
+}
+
+注释：
+	单行注释以 // 开头。
+		// 输出标题：
+	
+	多行注释以 /* 开始，以 */ 结尾。
+		/*
+		下面的这些代码会输出
+		一个标题和一个段落
+		并将代表主页的开始
+		*/
+
+字符串连接：
+var str = "hello ";
+str += "world";慢
+
+var arr = new Array();
+arr[0] = "hello ";
+arr[1] = "world";
+var str = arr.join("");
+
+var buffer = new StringBuffer ();
+buffer.append("hello ");自己追加
+buffer.append("world");
+var result = buffer.toString();快
+需要自己写方法，然后封装到StringBuffer对象中
+function StringBuffer () {
+  this._strings_ = new Array();
+}
+StringBuffer.prototype.append = function(str) {
+  this._strings_.push(str);
+};
+StringBuffer.prototype.toString = function() {
+  return this._strings_.join("");
+};
+
+StringBuffer中的字符串是可以改变的，属于是字符串变量
+append()：在一个StringBuffer对象后面追加字符串
+
+
+
+JSON：
+JSON的主要用处在于对字符串及json对象进行两者之间的转换，然后使用相应的语法对数据进行操作。
+JSON的结构基于下面两点 ：
+对象，数组。
+对象是属性、值对的集合。一个对象的开始于“{”，结束于“}”。每一个属性名和值间用“：”提示，属性间用“,”分隔。 
+数组是有顺序的值的集合。一个数组开始于"["，结束于"]"，值之间用","分隔。 
+值可以是引号里的字符串、数字、true、false、null，也可以是对象或数组。这些结构都能嵌套。 
+
+对象：(对象访问对象值时不能使用"[1]",即索引)
+JSON 对象使用在大括号({})中书写。
+对象可以包含多个 key/value（键/值）对。
+key 必须是字符串(" ")，value 可以是合法的 JSON 数据类型（字符串, 数字, 对象, 数组, 布尔值或 null）。
+key 和 value 中使用冒号(：)分割。
+每个 key/value 对使用逗号(,)分割。
+var myObj, x;
+myObj = { "name"："runoob", "alexa"：10000, "site"：null };
+访问对象值：
+myObj.name;
+myObj["name"];
+循环对象：
+for (x in myObj) {
+    document.getElementById("demo").innerHTML += x + "<br>";
+}循环属性
+for (x in myObj) {
+    document.getElementById("demo").innerHTML += myObj[x] + "<br>";
+}循环属性值
+删除对象属性：
+delete myObj.name;
+delete myObj["name"];
+
+数组：
+JSON 数组在中括号[]中书写。
+JSON 中数组值必须是合法的 JSON 数据类型（字符串, 数字, 对象, 数组, 布尔值或 null）。
+JavaScript 中，数组值可以是以上的 JSON 数据类型，也可以是 JavaScript 的表达式，包括函数，日期，及 undefined。
+对象中的数组：
+{
+	"name"："网站",
+	"num"：3,
+	"sites"：[ "Google", "Runoob", "Taobao" ]
+}
+访问：
+x = myObj.sites[0];
+数组与对象可以结合使用，最主要的区别在于对象不能使用索引取值，而数组可以。
+
+json数据格式：主要由对象 { } 和数组 [ ] 组成：
+其中对象包括键值对（属性：属性值）{key： value}，value 可为 str，num，list，obj。取值使用 objcet.key
+{key： value, key2：value2，} 键：值用冒号分开，对/间用，连接
+数组包含元素：num，str，list，objcet 都可以，利用索引访问 [index]，用 . 连接各个值：
+例子：
+var stu = {"student"：           						//stu 对象包含student的key,值为一个数组
+[                                     					//数组的每一个值为一个具体的学生对象
+{"name"： "Tom","Grade"：1, "age"：11, "gender"： "M"},     //学生对象的键为名字,值为对应属性
+{"name"： "Jerry", "Grade"：1, "age"：10, "gender"： "M"}   //每个属性对应的是一个key,value对
+],
+"classroom"： {"class1"： "room1", "class2"： "room2"}     //对象的值,嵌套对象
+};
+读取数据：
+document.write(stu.student[1].name);     				// 输出第二个学生名
+document.write(stu.student[0].age);      				// 输出第一个学生年龄
+document.write(stu.classroom.class1);    				// 输出 classroom 的 class1 值
+document.write(stu["classroom"].class2); 				// 也可用中括号键访问对象值
+关于delete：
+delete 运算符并不是彻底删除元素，而是删除它的值，但仍会保留空间。
+运算符 delete 只是将该值置为 undefined，而不会影响数组长度
+
+将数据转换为 JavaScript 对象：parse();
+JSON 通常用于与服务端交换数据。在接收服务器数据时一般是字符串。我们可以使用 JSON.parse() 方法。 
+JSON.parse(text[, reviver])
+{
+	{ "name"："runoob", "alexa"：10000, "site"："www.runoob.com" }
+	var obj = JSON.parse('{ "name"："runoob", "alexa"：10000, "site"："www.runoob.com" }');		
+}
+
+把 JSON 文本转换为 JavaScript 对象：eval();
+var obj = eval ("(" + txt + ")"); 
+{
+	var txt = '{ "sites" ： [' +
+	'{ "name"："菜鸟教程" , "url"："www.runoob.com" },' +
+	'{ "name"："google" , "url"："www.google.com" },' +
+	'{ "name"："微博" , "url"："www.weibo.com" } ]}';
+	var obj = eval ("(" + txt + ")");
+	document.getElementById("name").innerHTML=obj.sites[0].name 
+	document.getElementById("url").innerHTML=obj.sites[0].url		
+}
+
+将 JavaScript 对象转换为字符串：stringify();
+JSON 通常用于与服务端交换数据。在向服务器发送数据时一般是字符串。我们可以使用 JSON.stringify() 方法。 
+JSON.stringify(value[, replacer[, space]])
+{
+	var obj = { "name"："runoob", "alexa"：10000, "site"："www.runoob.com"};
+	var myJSON = JSON.stringify(obj);
+}
+
+JSON可以结合Ajax来使用，通过Ajax从服务器传过来的数据不论是数组还是对象，传过来都是string类型的，
+需要通过JSON转换将字符串类型转换为JSON对象，从来对数据进行操作。
+也可以把JSON对象转换成字符串类型，然后发往服务器端，因为服务器端接收的数据大部分是String类型的。
+JSON 是轻量级的文本数据交换格式。
+
+
+
+AJAX：
+AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术。
+XMLHttpRequest 是 AJAX 的基础。
+
+创建 XMLHttpRequest 对象：
+variable=new XMLHttpRequest();
+variable=new ActiveXObject("Microsoft.XMLHTTP");//老版本的 Internet Explorer （IE5 和 IE6）使用 ActiveX 对象
+{
+	var xmlhttp;
+	if (window.XMLHttpRequest)
+	{// code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp=new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+}
+	
+向服务器发送请求：
+xmlhttp.open("GET","test1.txt",true);
+true（异步）或 false（同步）
+xmlhttp.send();
+
+服务器响应：
+responseText：获得字符串形式的响应数据。
+responseXML： 获得 XML 形式的响应数据。
+x=xmlhttp.responseXML.documentElement.getElementsByTagName("CD");
+//向服务器请求XML文件，服务器响应，获取该文件中的CD标签，为一个数组。
+document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+{
+	xmlDoc=xmlhttp.responseXML;
+	txt="";
+	x=xmlDoc.getElementsByTagName("ARTIST");
+	for (i=0;i<x.length;i++)
+	  {
+	  txt=txt + x[i].childNodes[0].nodeValue + "<br />";
+	  }
+	document.getElementById("myDiv").innerHTML=txt;
+}//来自服务器的响应是 XML，而且需要作为 XML 对象进行解析
+
+onreadystatechange 事件：
+当请求被发送到服务器时，我们需要执行一些基于响应的任务。
+每当 readyState 改变时，就会触发 onreadystatechange 事件。
+（readyState 属性存有 XMLHttpRequest 的状态信息。）
+下面是 XMLHttpRequest 对象的三个重要的属性：
+onreadystatechange：存储函数（或函数名），每当 readyState 属性改变时，就会调用该函数。
+readyState：		存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+	0： 请求未初始化
+	1： 服务器连接已建立
+	2： 请求已接收
+	3： 请求处理中
+	4： 请求已完成，且响应已就绪						
+status
+	200： "OK"
+	404： 未找到页面
+{
+	xmlhttp.onreadystatechange=function()
+	{
+	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+		{
+		document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+		}
+	}
+}
+准备好了才可以接收服务器的响应。
+
+
+
+
+jQuery 是一个 JavaScript 库。
+jQuery 极大地简化了 JavaScript 编程。
+jQuery 很容易学习。
+
+
+
+
+
+
+
+
+
+
+
+
